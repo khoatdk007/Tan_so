@@ -4,6 +4,11 @@
 #include <algorithm>
 using namespace std;
 
+int lonnhat(int a,int b){
+    int max = a;
+    if (b > max) max = b;
+    return max;
+}
 struct gt{
     int giatri;
     int tanso;
@@ -49,10 +54,11 @@ int main()
     
     gtr.erase(gtr.begin());
 
+    system("cls");
     {
         cout << "Gia tri (x) | ";
         for(int i = 0; i < gtr.size(); i++){
-            cout << setw(chuso(gtr[i].giatri));
+            cout << setw(lonnhat(chuso(gtr[i].giatri),chuso(gtr[i].tanso)));
             cout << gtr[i].giatri << " | ";
         }
         cout << endl;
@@ -62,7 +68,7 @@ int main()
         cout << " Tan so (n) | ";
         for (int i = 0; i < gtr.size(); i++)
         {
-            cout << setw(chuso(gtr[i].giatri));
+            cout << setw(lonnhat(chuso(gtr[i].giatri),chuso(gtr[i].tanso)));
             cout << gtr[i].tanso << " | " ;
         }
         cout << "N = " << N << endl;

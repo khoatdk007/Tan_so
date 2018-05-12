@@ -53,6 +53,17 @@ int main()
     }
     
     gtr.erase(gtr.begin());
+    for (int i = 0; i < N; i++)
+    {
+        for (int j = N-1; j > i; j--)
+        {
+            if(gtr[j].giatri < gtr[j-1].giatri)
+            {
+                swap(gtr[j].giatri, gtr[j-1].giatri);
+                swap(gtr[j].tanso, gtr[j-1].tanso);
+            }
+        }
+    }
 
     system("cls");
     {
